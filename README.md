@@ -1,4 +1,4 @@
-# 搭建 hugo 博客部署到 firebase
+# 搭建 hugo 博客部署到 github pages
 
 ## 前言
 
