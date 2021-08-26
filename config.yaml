@@ -12,7 +12,7 @@ permalinks:
 markup:
   goldmark:
     renderer:
-      unsafe: false
+      unsafe: true
 
 params:
   project_name: Hyoban 的博客
