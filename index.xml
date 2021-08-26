@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hyoban</title><link>https://hyoban.github.io/</link><description>Recent content on Hyoban</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 26 Aug 2021 22:41:20 +0800</lastBuildDate><atom:link href="https://hyoban.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>如何相对干净地卸载 mac 上的软件</title><link>https://hyoban.github.io/uninstall/</link><pubDate>Thu, 26 Aug 2021 22:41:20 +0800</pubDate><guid>https://hyoban.github.io/uninstall/</guid><description>&lt;p>目前总结了三种方案&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hyoban</title><link>https://hyoban.github.io/</link><description>Recent content on Hyoban</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Thu, 26 Aug 2021 22:41:20 +0800</lastBuildDate><atom:link href="https://hyoban.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>如何相对干净地卸载 mac 上的软件</title><link>https://hyoban.github.io/post/uninstall/</link><pubDate>Thu, 26 Aug 2021 22:41:20 +0800</pubDate><guid>https://hyoban.github.io/post/uninstall/</guid><description>&lt;p>目前总结了三种方案&lt;/p>
 &lt;h2 id="软件自带的卸载器">软件自带的卸载器&lt;/h2>
 &lt;p>很多软件的安装包里就附有有卸载工具（如 virtual box），或者安装完成之后会有卸载程序（罗技的键盘驱动），这是比较理想的卸载方式。&lt;/p>
 &lt;img width="600" alt="pgp suite 的安装包" src="https://user-images.githubusercontent.com/38493346/130984363-af72fa36-9ffb-4e4a-90f1-ade2dde61061.png">
@@ -14,7 +14,7 @@
 &lt;pre>&lt;code>brew rm -f --zap --cask &amp;lt;app name&amp;gt;
 &lt;/code>&lt;/pre>
 &lt;p>-f 表示强制执行，不管是否安装（我们只是想要使用它提供的脚本），zap 可以理解为强力清理。&lt;/p>
-&lt;img width="600" alt="在终端使用 brew 执行卸载脚本" src="https://user-images.githubusercontent.com/38493346/130985443-5a2e834f-bac4-43d8-bc56-233ed05b32b9.png"></description></item><item><title>关于我</title><link>https://hyoban.github.io/about/</link><pubDate>Sat, 25 Sep 1999 22:34:20 +0800</pubDate><guid>https://hyoban.github.io/about/</guid><description>&lt;h2 id="目前在做什么">目前在做什么？&lt;/h2>
+&lt;img width="600" alt="在终端使用 brew 执行卸载脚本" src="https://user-images.githubusercontent.com/38493346/130985443-5a2e834f-bac4-43d8-bc56-233ed05b32b9.png"></description></item><item><title>关于我</title><link>https://hyoban.github.io/post/about/</link><pubDate>Sat, 25 Sep 1999 22:34:20 +0800</pubDate><guid>https://hyoban.github.io/post/about/</guid><description>&lt;h2 id="目前在做什么">目前在做什么？&lt;/h2>
 &lt;ol>
 &lt;li>&lt;del>写毕业论文&lt;/del>&lt;/li>
 &lt;li>&lt;del>学习 fastapi&lt;/del>&lt;/li>
