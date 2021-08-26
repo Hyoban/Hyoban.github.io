@@ -1,0 +1,56 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<title> 如何相对干净地卸载 mac 上的软件
+</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=theme-color content="#157878">
+<link rel=stylesheet href=/css/normalize.css>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel=stylesheet type=text/css>
+<link rel=stylesheet href=/css/cayman.css>
+</head>
+<body><section class=page-header>
+<h1 class=project-name> 如何相对干净地卸载 mac 上的软件
+</h1>
+<h2 class=project-tagline> 强迫症福音
+</h2>
+</section>
+<section class=main-content>
+<main>
+<article>
+<header>
+<h2>目录</h2>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#软件自带的卸载器>软件自带的卸载器</a></li>
+<li><a href=#-appcleanerhttpsfreemacsoftnetappcleaner>🌟 <a href=https://freemacsoft.net/appcleaner/>appcleaner</a></a></li>
+<li><a href=#brewhttpsbrewsh><a href=https://brew.sh/>brew</a></a></li>
+</ul>
+</nav>
+</header>
+<p>目前总结了三种方案</p>
+<h2 id=软件自带的卸载器>软件自带的卸载器</h2>
+<p>很多软件的安装包里就附有有卸载工具（如 virtual box），或者安装完成之后会有卸载程序（罗技的键盘驱动），这是比较理想的卸载方式。</p>
+<h2 id=-appcleanerhttpsfreemacsoftnetappcleaner>🌟 <a href=https://freemacsoft.net/appcleaner/>appcleaner</a></h2>
+<p>它可以帮你自动的检测需要删除的文件，还可以开启自动检测模式，当你移动软件到🗑️里时，就会提示你删除软件附带的文件。</p>
+<p>最为推荐。</p>
+<h2 id=brewhttpsbrewsh><a href=https://brew.sh/>brew</a></h2>
+<p>关于如何安装 brew 的细节，这里不多赘述。首先为 brew 加上 cask 的源：</p>
+<pre><code>brew tap Homebrew/homebrew-cask
+</code></pre>
+<p>然后就可以使用 brew 来卸载软件了，即使不是用 brew 安装的。</p>
+<pre><code>brew rm -f --zap --cask &lt;app name&gt;
+</code></pre>
+<p>-f 表示强制执行，不管是否安装（我们只是想要使用它提供的脚本），zap 可以理解为强力清理。</p>
+<h2>评论</h2>
+<div id=cusdis_thread data-host=https://cusdis.com data-app-id=4eab0f57-ebdc-4f97-9701-66535c7742fc data-page-id=e7dafb94430491188358007c43140dff data-page-url=https://hyoban.github.io/uninstall/ data-page-title="如何相对干净地卸载 mac 上的软件"></div>
+<script async defer src=https://cusdis.com/js/cusdis.es.js></script>
+</article>
+</main>
+<footer class=site-footer>
+<span class=site-footer-credits>
+Made with <a href=https://gohugo.io/>Hugo</a>. Themed by <a href=https://github.com/zwbetz-gh/cayman-hugo-theme>Cayman</a>. Deployed to <a href=https://pages.github.com/>Github Pages</a>.
+</span>
+</footer>
+</section>
+</body>
+</html>
