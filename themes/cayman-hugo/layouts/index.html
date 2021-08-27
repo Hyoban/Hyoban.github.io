@@ -1,15 +1,13 @@
-{{ define "main" }} 
-{{ $pages := site.RegularPages }} 
-{{ range $pages.GroupByDate "2006" }}
-<div>
-  <h2>{{ .Key }}</h2>
-  <ul>
-    {{ range .Pages}}
-    <li>
-      {{ .Date.Format "Jan 2" }} <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
-    {{ end }} 
-  </ul>
-</div>
-{{ end }}
+{{ define "main" }}
+  {{ $pages := .Site.RegularPages }}
+  {{ range $pages.GroupByDate "2006" }}
+    <div>
+      <h2>{{ .Key }}</h2>
+      <ul>
+        {{ range .Pages}}
+        <li> {{ .Date.Format "Jan 2" }} <a href="{{ .Permalink }}"> {{ .Title }} </a> </li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
 {{ end }}

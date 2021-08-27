@@ -37,20 +37,16 @@
 主题为 cayman，我自己稍作了修改，主要是首页按照日期分组展示，具体实现如下：
 
 ```
-{{ define "main" }} 
-{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }} 
+{{ $pages := .Site.RegularPages }}
 {{ range $pages.GroupByDate "2006" }}
-<div>
-  <h2>{{ .Key }}</h2>
-  <ul>
-    {{ range .Pages}}
-    <li>
-      {{ .Date.Format "Jan 2" }} <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
-    {{ end }} 
-  </ul>
-</div>
-{{ end }}
+  <div>
+    <h2>{{ .Key }}</h2>
+    <ul>
+      {{ range .Pages}}
+      <li> {{ .Date.Format "Jan 2" }} <a href="{{ .Permalink }}"> {{ .Title }} </a> </li>
+      {{ end }}
+    </ul>
+  </div>
 {{ end }}
 ```
 
