@@ -1,0 +1,111 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<title> 开始写一个 android 项目
+</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=theme-color content="#157878">
+<link rel=stylesheet href=/css/normalize.css>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel=stylesheet type=text/css>
+<link rel=stylesheet href=/css/cayman.css>
+</head>
+<body><section class=page-header>
+<h1 class=project-name> 开始写一个 android 项目
+</h1>
+<h2 class=project-tagline> 关于 Android studio 的配置
+</h2>
+</section>
+<section class=main-content>
+<main>
+<article>
+<header>
+<h2>目录</h2>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#android-studio-设置>android studio 设置</a></li>
+<li><a href=#spotless-和-ktlint>spotless 和 ktlint</a>
+<ul>
+<li><a href=#通过-ktlint-来设置-kotlin-代码风格>通过 ktlint 来设置 kotlin 代码风格</a></li>
+<li><a href=#设置-spotless>设置 spotless</a></li>
+<li><a href=#配置-gradle>配置 gradle</a></li>
+<li><a href=#参考>参考</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</header>
+<h2 id=android-studio-设置>android studio 设置</h2>
+<ol>
+<li>更新最新，请保持版本和插件为最新稳定版</li>
+<li>内存设置，设置到最大</li>
+<li>sdk 下载</li>
+<li>代理配置</li>
+<li>字体为 16 号</li>
+</ol>
+<h2 id=spotless-和-ktlint>spotless 和 ktlint</h2>
+<h3 id=通过-ktlint-来设置-kotlin-代码风格>通过 ktlint 来设置 kotlin 代码风格</h3>
+<p>需要提前安装好 ktlint，在项目文件夹下运行</p>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>ktlint --android applyToIDEAProject
+</code></pre></div><p>这只会影响当前 idea 项目，也是官方推荐的方法，你可以点击 <a href=https://github.com/pinterest/ktlint#-with-intellij-idea>链接</a> 查看更多。</p>
+<h3 id=设置-spotless>设置 spotless</h3>
+<p>请手动查询当前最新版本，链接已放在后面</p>
+<p>gradle</p>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle>plugins <span style=color:#666>{</span>
+    id <span style=color:#ba2121>&#39;com.diffplug.spotless&#39;</span> version <span style=color:#ba2121>&#39;5.14.2&#39;</span>
+<span style=color:#666>}</span>
+
+subprojects <span style=color:#666>{</span>
+    apply <span style=color:#a0a000>plugin:</span> <span style=color:#ba2121>&#39;com.diffplug.spotless&#39;</span>
+    spotless <span style=color:#666>{</span>
+        kotlin <span style=color:#666>{</span>
+            target <span style=color:#ba2121>&#39;**/*.kt&#39;</span>
+            targetExclude<span style=color:#666>(</span><span style=color:#ba2121>&#34;$buildDir/**/*.kt&#34;</span><span style=color:#666>)</span>
+            targetExclude<span style=color:#666>(</span><span style=color:#ba2121>&#39;bin/**/*.kt&#39;</span><span style=color:#666>)</span>
+
+            ktlint<span style=color:#666>(</span><span style=color:#ba2121>&#34;0.42.1&#34;</span><span style=color:#666>)</span>
+<span style=color:#408080;font-style:italic>//            licenseHeaderFile rootProject.file(&#34;spotless/copyright.kt&#34;)
+</span><span style=color:#408080;font-style:italic></span>        <span style=color:#666>}</span>
+    <span style=color:#666>}</span>
+<span style=color:#666>}</span>
+</code></pre></div><p>kts</p>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-kt data-lang=kt>plugins {
+    id(<span style=color:#ba2121>&#34;com.diffplug.spotless&#34;</span>) version <span style=color:#ba2121>&#34;5.14.2&#34;</span>
+}
+
+subprojects {
+    apply(plugin = <span style=color:#ba2121>&#34;com.diffplug.spotless&#34;</span>)
+    spotless {
+        kotlin {
+            target(<span style=color:#ba2121>&#34;**/*.kt&#34;</span>)
+            targetExclude(<span style=color:#ba2121>&#34;</span><span style=color:#b68;font-weight:700>$buildDir</span><span style=color:#ba2121>/**/*.kt&#34;</span>)
+            targetExclude(<span style=color:#ba2121>&#34;bin/**/*.kt&#34;</span>)
+
+            ktlint(<span style=color:#ba2121>&#34;0.42.1&#34;</span>)
+<span style=color:#408080;font-style:italic>//            licenseHeaderFile rootProject.file(&#34;spotless/copyright.kt&#34;)
+</span><span style=color:#408080;font-style:italic></span>        }
+    }
+}
+</code></pre></div><p>移除 as 默认生成的 task</p>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle>task <span style=color:#00f>clean</span><span style=color:#666>(</span><span style=color:#a0a000>type:</span> Delete<span style=color:#666>)</span> <span style=color:#666>{</span>
+    delete rootProject<span style=color:#666>.</span><span style=color:#7d9029>buildDir</span>
+<span style=color:#666>}</span> 
+</code></pre></div><h3 id=配置-gradle>配置 gradle</h3>
+<p>终端输入 <code>./gradlew app:spotlessApply</code>，按下 <code>cmd + enter</code> 来创建</p>
+<h3 id=参考>参考</h3>
+<ul>
+<li><a href=https://github.com/android/android-dev-challenge-compose>谷歌项目示例</a></li>
+<li><a href=https://github.com/diffplug/spotless>spotless</a></li>
+<li><a href=https://github.com/pinterest/ktlint>ktlint</a></li>
+</ul>
+<h2>评论</h2>
+<div id=cusdis_thread data-host=https://cusdis.com data-app-id=4eab0f57-ebdc-4f97-9701-66535c7742fc data-page-id=ca04b6de5ac1d2e3f1fdf2ed621742a7 data-page-url=https://hyoban.github.io/android-studio/ data-page-title="开始写一个 android 项目"></div>
+<script async defer src=https://cusdis.com/js/cusdis.es.js></script>
+</article>
+</main>
+<footer class=site-footer>
+<span class=site-footer-credits>
+Made with <a href=https://gohugo.io/>Hugo</a>. Themed by <a href=https://github.com/zwbetz-gh/cayman-hugo-theme>Cayman</a>. Deployed to <a href=https://pages.github.com/>Github Pages</a>.
+</span>
+</footer>
+</section>
+</body>
+</html>
