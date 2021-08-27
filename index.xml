@@ -1,62 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hyoban</title><link>https://hyoban.github.io/</link><description>Recent content on Hyoban</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://hyoban.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>开始写一个 android 项目</title><link>https://hyoban.github.io/android-studio/</link><pubDate>Fri, 27 Aug 2021 18:11:20 +0800</pubDate><guid>https://hyoban.github.io/android-studio/</guid><description>&lt;h2 id="android-studio-设置">android studio 设置&lt;/h2>
-&lt;ol>
-&lt;li>更新最新，请保持版本和插件为最新稳定版&lt;/li>
-&lt;li>内存设置，设置到最大&lt;/li>
-&lt;li>sdk 下载&lt;/li>
-&lt;li>代理配置&lt;/li>
-&lt;li>字体为 16 号&lt;/li>
-&lt;/ol>
-&lt;h2 id="spotless-和-ktlint">spotless 和 ktlint&lt;/h2>
-&lt;h3 id="通过-ktlint-来设置-kotlin-代码风格">通过 ktlint 来设置 kotlin 代码风格&lt;/h3>
-&lt;p>需要提前安装好 ktlint，在项目文件夹下运行&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">ktlint --android applyToIDEAProject
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>这只会影响当前 idea 项目，也是官方推荐的方法，你可以点击 &lt;a href="https://github.com/pinterest/ktlint#-with-intellij-idea">链接&lt;/a> 查看更多。&lt;/p>
-&lt;h3 id="设置-spotless">设置 spotless&lt;/h3>
-&lt;p>请手动查询当前最新版本，链接已放在后面&lt;/p>
-&lt;p>gradle&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-gradle" data-lang="gradle">plugins &lt;span style="color:#666">{&lt;/span>
-id &lt;span style="color:#ba2121">&amp;#39;com.diffplug.spotless&amp;#39;&lt;/span> version &lt;span style="color:#ba2121">&amp;#39;5.14.2&amp;#39;&lt;/span>
-&lt;span style="color:#666">}&lt;/span>
-subprojects &lt;span style="color:#666">{&lt;/span>
-apply &lt;span style="color:#a0a000">plugin:&lt;/span> &lt;span style="color:#ba2121">&amp;#39;com.diffplug.spotless&amp;#39;&lt;/span>
-spotless &lt;span style="color:#666">{&lt;/span>
-kotlin &lt;span style="color:#666">{&lt;/span>
-target &lt;span style="color:#ba2121">&amp;#39;**/*.kt&amp;#39;&lt;/span>
-targetExclude&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#34;$buildDir/**/*.kt&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
-targetExclude&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#39;bin/**/*.kt&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span>
-ktlint&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#34;0.42.1&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
-&lt;span style="color:#408080;font-style:italic">// licenseHeaderFile rootProject.file(&amp;#34;spotless/copyright.kt&amp;#34;)
-&lt;/span>&lt;span style="color:#408080;font-style:italic">&lt;/span> &lt;span style="color:#666">}&lt;/span>
-&lt;span style="color:#666">}&lt;/span>
-&lt;span style="color:#666">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>kts&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-kt" data-lang="kt">plugins {
-id(&lt;span style="color:#ba2121">&amp;#34;com.diffplug.spotless&amp;#34;&lt;/span>) version &lt;span style="color:#ba2121">&amp;#34;5.14.2&amp;#34;&lt;/span>
-}
-subprojects {
-apply(plugin = &lt;span style="color:#ba2121">&amp;#34;com.diffplug.spotless&amp;#34;&lt;/span>)
-spotless {
-kotlin {
-target(&lt;span style="color:#ba2121">&amp;#34;**/*.kt&amp;#34;&lt;/span>)
-targetExclude(&lt;span style="color:#ba2121">&amp;#34;&lt;/span>&lt;span style="color:#b68;font-weight:bold">$buildDir&lt;/span>&lt;span style="color:#ba2121">/**/*.kt&amp;#34;&lt;/span>)
-targetExclude(&lt;span style="color:#ba2121">&amp;#34;bin/**/*.kt&amp;#34;&lt;/span>)
-ktlint(&lt;span style="color:#ba2121">&amp;#34;0.42.1&amp;#34;&lt;/span>)
-&lt;span style="color:#408080;font-style:italic">// licenseHeaderFile rootProject.file(&amp;#34;spotless/copyright.kt&amp;#34;)
-&lt;/span>&lt;span style="color:#408080;font-style:italic">&lt;/span> }
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>移除 as 默认生成的 task&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-gradle" data-lang="gradle">task &lt;span style="color:#00f">clean&lt;/span>&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#a0a000">type:&lt;/span> Delete&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-delete rootProject&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#7d9029">buildDir&lt;/span>
-&lt;span style="color:#666">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置-gradle">配置 gradle&lt;/h3>
-&lt;p>终端输入 &lt;code>./gradlew app:spotlessApply&lt;/code>，按下 &lt;code>cmd + enter&lt;/code> 来创建&lt;/p>
-&lt;h3 id="参考">参考&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://github.com/android/android-dev-challenge-compose">谷歌项目示例&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/diffplug/spotless">spotless&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/pinterest/ktlint">ktlint&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>mac 补全计划</title><link>https://hyoban.github.io/mac/</link><pubDate>Fri, 27 Aug 2021 17:31:20 +0800</pubDate><guid>https://hyoban.github.io/mac/</guid><description>&lt;h2 id="重置指南nuc-8i5beh-限定">重置指南（nuc 8i5beh 限定）&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hyoban</title><link>https://hyoban.github.io/</link><description>Recent content on Hyoban</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://hyoban.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>如何相对干净地卸载 mac 上的软件</title><link>https://hyoban.github.io/uninstall/</link><pubDate>Thu, 26 Aug 2021 22:41:20 +0800</pubDate><guid>https://hyoban.github.io/uninstall/</guid><description>&lt;p>目前总结了三种方案&lt;/p>
+&lt;h2 id="软件自带的卸载器">软件自带的卸载器&lt;/h2>
+&lt;p>很多软件的安装包里就附有有卸载工具（如 virtual box），或者安装完成之后会有卸载程序（罗技的键盘驱动），这是比较理想的卸载方式。&lt;/p>
+&lt;img width="600" alt="pgp suite 的安装包" src="https://user-images.githubusercontent.com/38493346/130984363-af72fa36-9ffb-4e4a-90f1-ade2dde61061.png">
+&lt;h2 id="-appcleanerhttpsfreemacsoftnetappcleaner">🌟 &lt;a href="https://freemacsoft.net/appcleaner/">appcleaner&lt;/a>&lt;/h2>
+&lt;p>它可以帮你自动的检测需要删除的文件，还可以开启自动检测模式，当你移动软件到🗑️里时，就会提示你删除软件附带的文件。&lt;/p>
+&lt;img width="600" alt="使用 appcleaner 尝试卸载 vscode" src="https://user-images.githubusercontent.com/38493346/130984852-5dc827a7-4579-46a1-ae10-03a47963e8ed.png">
+&lt;p>最为推荐。&lt;/p>
+&lt;h2 id="brewhttpsbrewsh">&lt;a href="https://brew.sh/">brew&lt;/a>&lt;/h2>
+&lt;p>关于如何安装 brew 的细节，这里不多赘述。首先为 brew 加上 cask 的源：&lt;/p>
+&lt;pre>&lt;code>brew tap Homebrew/homebrew-cask
+&lt;/code>&lt;/pre>
+&lt;p>然后就可以使用 brew 来卸载软件了，即使不是用 brew 安装的。&lt;/p>
+&lt;pre>&lt;code>brew rm -f --zap --cask &amp;lt;app name&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;p>-f 表示强制执行，不管是否安装（我们只是想要使用它提供的脚本），zap 可以理解为强力清理。&lt;/p>
+&lt;img width="600" alt="在终端使用 brew 执行卸载脚本" src="https://user-images.githubusercontent.com/38493346/130985443-5a2e834f-bac4-43d8-bc56-233ed05b32b9.png"></description></item><item><title>mac 补全计划</title><link>https://hyoban.github.io/mac/</link><pubDate>Tue, 10 Aug 2021 17:31:20 +0800</pubDate><guid>https://hyoban.github.io/mac/</guid><description>&lt;h2 id="重置指南nuc-8i5beh-限定">重置指南（nuc 8i5beh 限定）&lt;/h2>
 &lt;h3 id="注意事项">注意事项&lt;/h3>
 &lt;p>&lt;strong>重装系统前需要退出设备和网页上的 apple 设备，否则会导致设备无法收到更新。&lt;/strong>（原因是没有手动替换三码）&lt;/p>
 &lt;p>开启 hidpi时，第一项选择 &lt;code>(2) Enable HIDPI (with EDID)&lt;/code>&lt;/p>
@@ -200,23 +158,65 @@ sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/J
 &lt;h3 id="gpg">&lt;del>gpg&lt;/del>&lt;/h3>
 &lt;p>目前主要用于 github commit 认证&lt;/p>
 &lt;pre>&lt;code>brew install gnupg
-&lt;/code>&lt;/pre></description></item><item><title>如何相对干净地卸载 mac 上的软件</title><link>https://hyoban.github.io/uninstall/</link><pubDate>Thu, 26 Aug 2021 22:41:20 +0800</pubDate><guid>https://hyoban.github.io/uninstall/</guid><description>&lt;p>目前总结了三种方案&lt;/p>
-&lt;h2 id="软件自带的卸载器">软件自带的卸载器&lt;/h2>
-&lt;p>很多软件的安装包里就附有有卸载工具（如 virtual box），或者安装完成之后会有卸载程序（罗技的键盘驱动），这是比较理想的卸载方式。&lt;/p>
-&lt;img width="600" alt="pgp suite 的安装包" src="https://user-images.githubusercontent.com/38493346/130984363-af72fa36-9ffb-4e4a-90f1-ade2dde61061.png">
-&lt;h2 id="-appcleanerhttpsfreemacsoftnetappcleaner">🌟 &lt;a href="https://freemacsoft.net/appcleaner/">appcleaner&lt;/a>&lt;/h2>
-&lt;p>它可以帮你自动的检测需要删除的文件，还可以开启自动检测模式，当你移动软件到🗑️里时，就会提示你删除软件附带的文件。&lt;/p>
-&lt;img width="600" alt="使用 appcleaner 尝试卸载 vscode" src="https://user-images.githubusercontent.com/38493346/130984852-5dc827a7-4579-46a1-ae10-03a47963e8ed.png">
-&lt;p>最为推荐。&lt;/p>
-&lt;h2 id="brewhttpsbrewsh">&lt;a href="https://brew.sh/">brew&lt;/a>&lt;/h2>
-&lt;p>关于如何安装 brew 的细节，这里不多赘述。首先为 brew 加上 cask 的源：&lt;/p>
-&lt;pre>&lt;code>brew tap Homebrew/homebrew-cask
-&lt;/code>&lt;/pre>
-&lt;p>然后就可以使用 brew 来卸载软件了，即使不是用 brew 安装的。&lt;/p>
-&lt;pre>&lt;code>brew rm -f --zap --cask &amp;lt;app name&amp;gt;
-&lt;/code>&lt;/pre>
-&lt;p>-f 表示强制执行，不管是否安装（我们只是想要使用它提供的脚本），zap 可以理解为强力清理。&lt;/p>
-&lt;img width="600" alt="在终端使用 brew 执行卸载脚本" src="https://user-images.githubusercontent.com/38493346/130985443-5a2e834f-bac4-43d8-bc56-233ed05b32b9.png"></description></item><item><title>关于我</title><link>https://hyoban.github.io/about/</link><pubDate>Sat, 25 Sep 1999 22:34:20 +0800</pubDate><guid>https://hyoban.github.io/about/</guid><description>&lt;h2 id="我是谁">我是谁？&lt;/h2>
+&lt;/code>&lt;/pre></description></item><item><title>开始写一个 android 项目</title><link>https://hyoban.github.io/android-studio/</link><pubDate>Tue, 27 Jul 2021 18:11:20 +0800</pubDate><guid>https://hyoban.github.io/android-studio/</guid><description>&lt;h2 id="android-studio-设置">android studio 设置&lt;/h2>
+&lt;ol>
+&lt;li>更新最新，请保持版本和插件为最新稳定版&lt;/li>
+&lt;li>内存设置，设置到最大&lt;/li>
+&lt;li>sdk 下载&lt;/li>
+&lt;li>代理配置&lt;/li>
+&lt;li>字体为 16 号&lt;/li>
+&lt;/ol>
+&lt;h2 id="spotless-和-ktlint">spotless 和 ktlint&lt;/h2>
+&lt;h3 id="通过-ktlint-来设置-kotlin-代码风格">通过 ktlint 来设置 kotlin 代码风格&lt;/h3>
+&lt;p>需要提前安装好 ktlint，在项目文件夹下运行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">ktlint --android applyToIDEAProject
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>这只会影响当前 idea 项目，也是官方推荐的方法，你可以点击 &lt;a href="https://github.com/pinterest/ktlint#-with-intellij-idea">链接&lt;/a> 查看更多。&lt;/p>
+&lt;h3 id="设置-spotless">设置 spotless&lt;/h3>
+&lt;p>请手动查询当前最新版本，链接已放在后面&lt;/p>
+&lt;p>gradle&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-gradle" data-lang="gradle">plugins &lt;span style="color:#666">{&lt;/span>
+id &lt;span style="color:#ba2121">&amp;#39;com.diffplug.spotless&amp;#39;&lt;/span> version &lt;span style="color:#ba2121">&amp;#39;5.14.2&amp;#39;&lt;/span>
+&lt;span style="color:#666">}&lt;/span>
+subprojects &lt;span style="color:#666">{&lt;/span>
+apply &lt;span style="color:#a0a000">plugin:&lt;/span> &lt;span style="color:#ba2121">&amp;#39;com.diffplug.spotless&amp;#39;&lt;/span>
+spotless &lt;span style="color:#666">{&lt;/span>
+kotlin &lt;span style="color:#666">{&lt;/span>
+target &lt;span style="color:#ba2121">&amp;#39;**/*.kt&amp;#39;&lt;/span>
+targetExclude&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#34;$buildDir/**/*.kt&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+targetExclude&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#39;bin/**/*.kt&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+ktlint&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#34;0.42.1&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;span style="color:#408080;font-style:italic">// licenseHeaderFile rootProject.file(&amp;#34;spotless/copyright.kt&amp;#34;)
+&lt;/span>&lt;span style="color:#408080;font-style:italic">&lt;/span> &lt;span style="color:#666">}&lt;/span>
+&lt;span style="color:#666">}&lt;/span>
+&lt;span style="color:#666">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>kts&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-kt" data-lang="kt">plugins {
+id(&lt;span style="color:#ba2121">&amp;#34;com.diffplug.spotless&amp;#34;&lt;/span>) version &lt;span style="color:#ba2121">&amp;#34;5.14.2&amp;#34;&lt;/span>
+}
+subprojects {
+apply(plugin = &lt;span style="color:#ba2121">&amp;#34;com.diffplug.spotless&amp;#34;&lt;/span>)
+spotless {
+kotlin {
+target(&lt;span style="color:#ba2121">&amp;#34;**/*.kt&amp;#34;&lt;/span>)
+targetExclude(&lt;span style="color:#ba2121">&amp;#34;&lt;/span>&lt;span style="color:#b68;font-weight:bold">$buildDir&lt;/span>&lt;span style="color:#ba2121">/**/*.kt&amp;#34;&lt;/span>)
+targetExclude(&lt;span style="color:#ba2121">&amp;#34;bin/**/*.kt&amp;#34;&lt;/span>)
+ktlint(&lt;span style="color:#ba2121">&amp;#34;0.42.1&amp;#34;&lt;/span>)
+&lt;span style="color:#408080;font-style:italic">// licenseHeaderFile rootProject.file(&amp;#34;spotless/copyright.kt&amp;#34;)
+&lt;/span>&lt;span style="color:#408080;font-style:italic">&lt;/span> }
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>移除 as 默认生成的 task&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-gradle" data-lang="gradle">task &lt;span style="color:#00f">clean&lt;/span>&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#a0a000">type:&lt;/span> Delete&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">{&lt;/span>
+delete rootProject&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#7d9029">buildDir&lt;/span>
+&lt;span style="color:#666">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="配置-gradle">配置 gradle&lt;/h3>
+&lt;p>终端输入 &lt;code>./gradlew app:spotlessApply&lt;/code>，按下 &lt;code>cmd + enter&lt;/code> 来创建&lt;/p>
+&lt;h3 id="参考">参考&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/android/android-dev-challenge-compose">谷歌项目示例&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/diffplug/spotless">spotless&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/pinterest/ktlint">ktlint&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>关于我</title><link>https://hyoban.github.io/about/</link><pubDate>Sat, 25 Sep 1999 22:34:20 +0800</pubDate><guid>https://hyoban.github.io/about/</guid><description>&lt;h2 id="我是谁">我是谁？&lt;/h2>
 &lt;p>目前大学在读，毕业前准备考公，梦想是成为独立开发者。&lt;/p>
 &lt;h2 id="博客会写些什么">博客会写些什么？&lt;/h2>
 &lt;p>主要是对于学习折腾得到的笔记进行整理和输出，内容五花八门。&lt;/p>
