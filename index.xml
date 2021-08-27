@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hyoban</title><link>https://hyoban.github.io/</link><description>Recent content on Hyoban</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://hyoban.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>开始写一个 android 项目</title><link>https://hyoban.github.io/android-studio/</link><pubDate>Fri, 27 Aug 2021 17:31:20 +0800</pubDate><guid>https://hyoban.github.io/android-studio/</guid><description>&lt;h2 id="android-studio-设置">android studio 设置&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hyoban</title><link>https://hyoban.github.io/</link><description>Recent content on Hyoban</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://hyoban.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>mac 补全计划</title><link>https://hyoban.github.io/mac/</link><pubDate>Fri, 27 Aug 2021 17:31:20 +0800</pubDate><guid>https://hyoban.github.io/mac/</guid><description>&lt;h2 id="重置指南nuc-8i5beh-限定">重置指南（nuc 8i5beh 限定）&lt;/h2>
+&lt;h3 id="注意事项">注意事项&lt;/h3>
+&lt;p>&lt;strong>重装系统前需要退出设备和网页上的 apple 设备，否则会导致设备无法收到更新。&lt;/strong>（原因是没有手动替换三码）&lt;/p>
+&lt;p>开启 hidpi时，第一项选择 &lt;code>(2) Enable HIDPI (with EDID)&lt;/code>&lt;/p>
+&lt;h3 id="显示器">显示器&lt;/h3>
+&lt;p>切换缩放，设置完成 hidpi 重启后再调整回来。（可选，如果你的显示器默认可以开启 hidpi 的话）&lt;/p>
+&lt;h3 id="mos第三方软件">mos（第三方软件）&lt;/h3>
+&lt;ol>
+&lt;li>设置鼠标平滑&lt;/li>
+&lt;li>开机自启和隐藏图标&lt;/li>
+&lt;/ol>
+&lt;h3 id="hackintool">hackintool&lt;/h3>
+&lt;ol>
+&lt;li>替换 efi&lt;/li>
+&lt;li>修复睡眠&lt;/li>
+&lt;/ol>
+&lt;h3 id="clash-x-pro">clash x pro&lt;/h3>
+&lt;ol>
+&lt;li>安装 clashx pro&lt;/li>
+&lt;li>添加订阅&lt;/li>
+&lt;li>设置为系统代理&lt;/li>
+&lt;li>设置开机启动&lt;/li>
+&lt;/ol>
+&lt;h3 id="terminal">terminal&lt;/h3>
+&lt;ol>
+&lt;li>终端修改字体大小&lt;/li>
+&lt;li>下载 brew&lt;/li>
+&lt;li>开启 hidpi&lt;/li>
+&lt;/ol>
+&lt;h3 id="快捷键">快捷键&lt;/h3>
+&lt;ol>
+&lt;li>替换 capslock 为 control&lt;/li>
+&lt;li>设置快捷键&lt;/li>
+&lt;/ol>
+&lt;h3 id="访达">访达&lt;/h3>
+&lt;ol>
+&lt;li>文件按照名称排序&lt;/li>
+&lt;li>隐藏桌面图标&lt;/li>
+&lt;li>设置启动文件夹&lt;/li>
+&lt;li>侧边栏隐藏标签，调整展示选项&lt;/li>
+&lt;li>显示文件扩展名&lt;/li>
+&lt;li>桌面图标按网格放置&lt;/li>
+&lt;/ol>
+&lt;h3 id="dock-和-菜单栏">dock 和 菜单栏&lt;/h3>
+&lt;ol>
+&lt;li>设置 dock 放大&lt;/li>
+&lt;li>移除 dock 图标&lt;/li>
+&lt;li>自动隐藏&lt;/li>
+&lt;li>移除右上角软件图标&lt;/li>
+&lt;/ol>
+&lt;h3 id="other">other&lt;/h3>
+&lt;ol>
+&lt;li>设置自动登入，&lt;/li>
+&lt;li>屏幕常亮&lt;/li>
+&lt;li>触发角设置左下为启动台，右下为任务管理&lt;/li>
+&lt;li>设置日期时间格式&lt;/li>
+&lt;li>关闭开机恢复软件&lt;/li>
+&lt;li>重启&lt;/li>
+&lt;li>登录 apple 账号&lt;/li>
+&lt;/ol>
+&lt;h2 id="终端设置">终端设置&lt;/h2>
+&lt;h3 id="设置代理">设置代理&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">&lt;span style="color:#008000">export&lt;/span> &lt;span style="color:#19177c">https_proxy&lt;/span>&lt;span style="color:#666">=&lt;/span>http://127.0.0.1:7890 &lt;span style="color:#19177c">http_proxy&lt;/span>&lt;span style="color:#666">=&lt;/span>http://127.0.0.1:7890 &lt;span style="color:#19177c">all_proxy&lt;/span>&lt;span style="color:#666">=&lt;/span>socks5://127.0.0.1:7890
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="安装-brew">安装 brew&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">/bin/bash -c &lt;span style="color:#ba2121">&amp;#34;&lt;/span>&lt;span style="color:#008000;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span style="color:#008000;font-weight:bold">)&lt;/span>&lt;span style="color:#ba2121">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="开启-hidpi">开启 hidpi&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">bash -c &lt;span style="color:#ba2121">&amp;#34;&lt;/span>&lt;span style="color:#008000;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh&lt;span style="color:#008000;font-weight:bold">)&lt;/span>&lt;span style="color:#ba2121">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="终端-hostname-显示修正">终端 hostname 显示修正&lt;/h3>
+&lt;p>（可选）&lt;strong>路由器设置自定义 dns 即可&lt;/strong>，一般可选 8.8.8.8（谷歌，国外）和 114.114.114.114（国内），也有说国内实际连接不上谷歌的 dns，已经被污染了。&lt;/p>
+&lt;p>常见的出错情况为显示 bogon 或者 192，解决办法是手动指定 dns 而非使用路由器默认的 dns 服务，也就是 0.0.0.0。&lt;/p>
+&lt;p>通常情况下，路由器默认开启 dhcp 服务，自动分配 ip 地址的同时，为设备转发 dns。所以设置在路由器或者本机的网络设置里都可以，在本机设置的话，设备就无视路由器的 dns 转发。&lt;/p>
+&lt;blockquote>
+&lt;p>terminal 显示 hostname 之前会先根据本机 IP 做一次 rDNS 反向查询，就是通过 ip 地址查询 hostname，过程与 DNS 类似。
+rDNS 反向查询常用在 traceroute 以及反垃圾邮件技术中，terminal 显示查询到的 hostname，如果没有查询到，那么使用本机设置的 hostname。
+本机 IP 通常是局域网 IP 地址（保留IP地址），一般是查不到的，所以 terminal 一般显示的本机设置的 hostname，比如dangchujiubugaixiafan&amp;rsquo;s-macbook。
+上面提到，局域网 IP 地址一般是查不到 hostname，是因为 ISP 提供商或者用户防火窗的屏蔽保留 IP 地址，因为保留 IP 地址在公网中没啥用，即便是没有被屏蔽掉，rDNS 服务器一般也会关闭响应保留IP地址的查询请求。凡事都有例外，rDNS 服务器对这种保留 IP 地址对查询一律返回 bogon。在 ipv4 对地址划分中，除了公网分配在用对 IP 地址外，其余保留 IP 地址统一叫做bogon space。&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="参考">参考&lt;/h4>
+&lt;ol>
+&lt;li>&lt;a href="https://zhuanlan.zhihu.com/p/55827741">Mac修复hostname被篡改为bogon&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://discussionschinese.apple.com/thread/76800?answerId=140246186322#140246186322">问：mac终端用户名不知何故变成了192&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://zhuanlan.zhihu.com/p/105942315">DNS 与路由器设置马克&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="oh-my-zshhttpsgithubcomohmyzshohmyzsh">&lt;a href="https://github.com/ohmyzsh/ohmyzsh">oh my zsh&lt;/a>&lt;/h3>
+&lt;p>注意先让终端启用代理&lt;/p>
+&lt;p>安装本体&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">sh -c &lt;span style="color:#ba2121">&amp;#34;&lt;/span>&lt;span style="color:#008000;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span style="color:#008000;font-weight:bold">)&lt;/span>&lt;span style="color:#ba2121">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>安装插件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">&lt;span style="color:#008000">cd&lt;/span> ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置 zshrc&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">&lt;span style="color:#408080;font-style:italic"># fix pip command in zsh&lt;/span>
+&lt;span style="color:#008000">alias&lt;/span> &lt;span style="color:#19177c">pip&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#ba2121">&amp;#39;noglob pip&amp;#39;&lt;/span>
+&lt;span style="color:#408080;font-style:italic"># set proxy&lt;/span>
+&lt;span style="color:#008000">export&lt;/span> &lt;span style="color:#19177c">https_proxy&lt;/span>&lt;span style="color:#666">=&lt;/span>http://127.0.0.1:7890 &lt;span style="color:#19177c">http_proxy&lt;/span>&lt;span style="color:#666">=&lt;/span>http://127.0.0.1:7890 &lt;span style="color:#19177c">all_proxy&lt;/span>&lt;span style="color:#666">=&lt;/span>socks5://127.0.0.1:7890
+&lt;span style="color:#408080;font-style:italic"># nvm&lt;/span>
+&lt;span style="color:#008000">export&lt;/span> &lt;span style="color:#19177c">NVM_DIR&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#ba2121">&amp;#34;&lt;/span>&lt;span style="color:#19177c">$HOME&lt;/span>&lt;span style="color:#ba2121">/.nvm&amp;#34;&lt;/span>
+&lt;span style="color:#666">[&lt;/span> -s &lt;span style="color:#ba2121">&amp;#34;/usr/local/opt/nvm/nvm.sh&amp;#34;&lt;/span> &lt;span style="color:#666">]&lt;/span> &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> . &lt;span style="color:#ba2121">&amp;#34;/usr/local/opt/nvm/nvm.sh&amp;#34;&lt;/span> &lt;span style="color:#408080;font-style:italic"># This loads nvm&lt;/span>
+&lt;span style="color:#666">[&lt;/span> -s &lt;span style="color:#ba2121">&amp;#34;/usr/local/opt/nvm/etc/bash_completion.d/nvm&amp;#34;&lt;/span> &lt;span style="color:#666">]&lt;/span> &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> . &lt;span style="color:#ba2121">&amp;#34;/usr/local/opt/nvm/etc/bash_completion.d/nvm&amp;#34;&lt;/span> &lt;span style="color:#408080;font-style:italic"># This loads nvm bash_completion&lt;/span>
+&lt;span style="color:#408080;font-style:italic"># set plugins&lt;/span>
+&lt;span style="color:#19177c">plugins&lt;/span>&lt;span style="color:#666">=(&lt;/span>git zsh-autosuggestions zsh-syntax-highlighting sublime&lt;span style="color:#666">)&lt;/span>
+&lt;span style="color:#408080;font-style:italic"># set adb&lt;/span>
+&lt;span style="color:#008000">export&lt;/span> &lt;span style="color:#19177c">ANDROID_SDK_ROOT&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#ba2121">&amp;#34;/Users/hyoban/Library/Android/sdk&amp;#34;&lt;/span>
+&lt;span style="color:#008000">export&lt;/span> &lt;span style="color:#19177c">PATH&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#ba2121">&amp;#34;&lt;/span>&lt;span style="color:#19177c">$ANDROID_SDK_ROOT&lt;/span>&lt;span style="color:#ba2121">/platform-tools:&lt;/span>&lt;span style="color:#19177c">$PATH&lt;/span>&lt;span style="color:#ba2121">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="主题">主题&lt;/h4>
+&lt;ol>
+&lt;li>&lt;a href="https://draculatheme.com/terminal">Dracula&lt;/a> &lt;a href="https://github.com/dracula/terminal-app/archive/master.zip">直接下载&lt;/a>&lt;/li>
+&lt;li>设置字体为 Monaco，字号为16&lt;/li>
+&lt;/ol>
+&lt;h3 id="git-配置">git 配置&lt;/h3>
+&lt;h4 id="安装-github-desktop">安装 github desktop&lt;/h4>
+&lt;p>设置默认分支为 master&lt;/p>
+&lt;h4 id="设置全局的-git-ignore">设置全局的 git ignore&lt;/h4>
+&lt;p>&lt;a href="https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer">添加设置&lt;/a>&lt;/p>
+&lt;pre>&lt;code>git config --global core.excludesfile ~/.gitignore_global
+&lt;/code>&lt;/pre>
+&lt;p>完成后的 .gitconfig 有如下内容&lt;/p>
+&lt;pre>&lt;code>[core]
+excludesfile = /Users/&amp;lt;username&amp;gt;/.gitignore_global
+&lt;/code>&lt;/pre>
+&lt;p>添加需要排除的文件&lt;/p>
+&lt;p>这里有一份 &lt;a href="https://github.com/github/gitignore/blob/master/Global/macOS.gitignore">mac 的示例&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://twitter.com/github/status/1423663917881077760">参考&lt;/a>&lt;/p>
+&lt;h2 id="brew-list">brew list&lt;/h2>
+&lt;h3 id="neofetchhttpsgithubcomdylanarapsneofetch">&lt;a href="https://github.com/dylanaraps/neofetch">neofetch&lt;/a>&lt;/h3>
+&lt;p>显示系统信息，不推荐 screenfetch，目前 macOS 11 识别有问题，参考 KittyKatt/screenFetch/issues/716&lt;/p>
+&lt;pre>&lt;code>brew install neofetch
+&lt;/code>&lt;/pre>
+&lt;h3 id="github-clihttpscligithubcom">&lt;del>&lt;a href="https://cli.github.com">github cli&lt;/a>&lt;/del>&lt;/h3>
+&lt;p>便于终端环境配置 github，mac 无需使用，Github desktop 即可&lt;/p>
+&lt;pre>&lt;code>brew install gh
+&lt;/code>&lt;/pre>
+&lt;h3 id="gohttpsgithubcomgolanggo">&lt;a href="https://github.com/golang/go">go&lt;/a>&lt;/h3>
+&lt;pre>&lt;code>brew install go
+&lt;/code>&lt;/pre>
+&lt;h3 id="ktlinthttpsgithubcompinterestktlint">&lt;a href="https://github.com/pinterest/ktlint">ktlint&lt;/a>&lt;/h3>
+&lt;p>配置 kotlin 代码格式，此外这会依赖于 openjdk 11，可以顺手配置 java 环境。&lt;/p>
+&lt;pre>&lt;code>brew install ktlint
+sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+&lt;/code>&lt;/pre>
+&lt;h3 id="gpg">&lt;del>gpg&lt;/del>&lt;/h3>
+&lt;p>目前主要用于 github commit 认证&lt;/p>
+&lt;pre>&lt;code>brew install gnupg
+&lt;/code>&lt;/pre></description></item><item><title>开始写一个 android 项目</title><link>https://hyoban.github.io/android-studio/</link><pubDate>Fri, 27 Aug 2021 17:31:20 +0800</pubDate><guid>https://hyoban.github.io/android-studio/</guid><description>&lt;h2 id="android-studio-设置">android studio 设置&lt;/h2>
 &lt;ol>
 &lt;li>更新最新，请保持版本和插件为最新稳定版&lt;/li>
 &lt;li>内存设置，设置到最大&lt;/li>

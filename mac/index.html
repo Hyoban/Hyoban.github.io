@@ -1,0 +1,221 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<title> mac 补全计划
+</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=theme-color content="#157878">
+<link rel=stylesheet href=/css/normalize.css>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel=stylesheet type=text/css>
+<link rel=stylesheet href=/css/cayman.css>
+</head>
+<body><section class=page-header>
+<h1 class=project-name> mac 补全计划
+</h1>
+<h2 class=project-tagline> 拿到一台新的 mac 需要做哪些设置呢
+</h2>
+</section>
+<section class=main-content>
+<main>
+<article>
+<header>
+<h2>目录</h2>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#重置指南nuc-8i5beh-限定>重置指南（nuc 8i5beh 限定）</a>
+<ul>
+<li><a href=#注意事项>注意事项</a></li>
+<li><a href=#显示器>显示器</a></li>
+<li><a href=#mos第三方软件>mos（第三方软件）</a></li>
+<li><a href=#hackintool>hackintool</a></li>
+<li><a href=#clash-x-pro>clash x pro</a></li>
+<li><a href=#terminal>terminal</a></li>
+<li><a href=#快捷键>快捷键</a></li>
+<li><a href=#访达>访达</a></li>
+<li><a href=#dock-和-菜单栏>dock 和 菜单栏</a></li>
+<li><a href=#other>other</a></li>
+</ul>
+</li>
+<li><a href=#终端设置>终端设置</a>
+<ul>
+<li><a href=#设置代理>设置代理</a></li>
+<li><a href=#安装-brew>安装 brew</a></li>
+<li><a href=#开启-hidpi>开启 hidpi</a></li>
+<li><a href=#终端-hostname-显示修正>终端 hostname 显示修正</a></li>
+<li><a href=#oh-my-zshhttpsgithubcomohmyzshohmyzsh><a href=https://github.com/ohmyzsh/ohmyzsh>oh my zsh</a></a></li>
+<li><a href=#git-配置>git 配置</a></li>
+</ul>
+</li>
+<li><a href=#brew-list>brew list</a>
+<ul>
+<li><a href=#neofetchhttpsgithubcomdylanarapsneofetch><a href=https://github.com/dylanaraps/neofetch>neofetch</a></a></li>
+<li><a href=#github-clihttpscligithubcom><a href=https://cli.github.com>github cli</a></a></li>
+<li><a href=#gohttpsgithubcomgolanggo><a href=https://github.com/golang/go>go</a></a></li>
+<li><a href=#ktlinthttpsgithubcompinterestktlint><a href=https://github.com/pinterest/ktlint>ktlint</a></a></li>
+<li><a href=#gpg>gpg</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</header>
+<h2 id=重置指南nuc-8i5beh-限定>重置指南（nuc 8i5beh 限定）</h2>
+<h3 id=注意事项>注意事项</h3>
+<p><strong>重装系统前需要退出设备和网页上的 apple 设备，否则会导致设备无法收到更新。</strong>（原因是没有手动替换三码）</p>
+<p>开启 hidpi时，第一项选择 <code>(2) Enable HIDPI (with EDID)</code></p>
+<h3 id=显示器>显示器</h3>
+<p>切换缩放，设置完成 hidpi 重启后再调整回来。（可选，如果你的显示器默认可以开启 hidpi 的话）</p>
+<h3 id=mos第三方软件>mos（第三方软件）</h3>
+<ol>
+<li>设置鼠标平滑</li>
+<li>开机自启和隐藏图标</li>
+</ol>
+<h3 id=hackintool>hackintool</h3>
+<ol>
+<li>替换 efi</li>
+<li>修复睡眠</li>
+</ol>
+<h3 id=clash-x-pro>clash x pro</h3>
+<ol>
+<li>安装 clashx pro</li>
+<li>添加订阅</li>
+<li>设置为系统代理</li>
+<li>设置开机启动</li>
+</ol>
+<h3 id=terminal>terminal</h3>
+<ol>
+<li>终端修改字体大小</li>
+<li>下载 brew</li>
+<li>开启 hidpi</li>
+</ol>
+<h3 id=快捷键>快捷键</h3>
+<ol>
+<li>替换 capslock 为 control</li>
+<li>设置快捷键</li>
+</ol>
+<h3 id=访达>访达</h3>
+<ol>
+<li>文件按照名称排序</li>
+<li>隐藏桌面图标</li>
+<li>设置启动文件夹</li>
+<li>侧边栏隐藏标签，调整展示选项</li>
+<li>显示文件扩展名</li>
+<li>桌面图标按网格放置</li>
+</ol>
+<h3 id=dock-和-菜单栏>dock 和 菜单栏</h3>
+<ol>
+<li>设置 dock 放大</li>
+<li>移除 dock 图标</li>
+<li>自动隐藏</li>
+<li>移除右上角软件图标</li>
+</ol>
+<h3 id=other>other</h3>
+<ol>
+<li>设置自动登入，</li>
+<li>屏幕常亮</li>
+<li>触发角设置左下为启动台，右下为任务管理</li>
+<li>设置日期时间格式</li>
+<li>关闭开机恢复软件</li>
+<li>重启</li>
+<li>登录 apple 账号</li>
+</ol>
+<h2 id=终端设置>终端设置</h2>
+<h3 id=设置代理>设置代理</h3>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:green>export</span> <span style=color:#19177c>https_proxy</span><span style=color:#666>=</span>http://127.0.0.1:7890 <span style=color:#19177c>http_proxy</span><span style=color:#666>=</span>http://127.0.0.1:7890 <span style=color:#19177c>all_proxy</span><span style=color:#666>=</span>socks5://127.0.0.1:7890
+</code></pre></div><h3 id=安装-brew>安装 brew</h3>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>/bin/bash -c <span style=color:#ba2121>&#34;</span><span style=color:green;font-weight:700>$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style=color:green;font-weight:700>)</span><span style=color:#ba2121>&#34;</span>
+</code></pre></div><h3 id=开启-hidpi>开启 hidpi</h3>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>bash -c <span style=color:#ba2121>&#34;</span><span style=color:green;font-weight:700>$(</span>curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh<span style=color:green;font-weight:700>)</span><span style=color:#ba2121>&#34;</span>
+</code></pre></div><h3 id=终端-hostname-显示修正>终端 hostname 显示修正</h3>
+<p>（可选）<strong>路由器设置自定义 dns 即可</strong>，一般可选 8.8.8.8（谷歌，国外）和 114.114.114.114（国内），也有说国内实际连接不上谷歌的 dns，已经被污染了。</p>
+<p>常见的出错情况为显示 bogon 或者 192，解决办法是手动指定 dns 而非使用路由器默认的 dns 服务，也就是 0.0.0.0。</p>
+<p>通常情况下，路由器默认开启 dhcp 服务，自动分配 ip 地址的同时，为设备转发 dns。所以设置在路由器或者本机的网络设置里都可以，在本机设置的话，设备就无视路由器的 dns 转发。</p>
+<blockquote>
+<p>terminal 显示 hostname 之前会先根据本机 IP 做一次 rDNS 反向查询，就是通过 ip 地址查询 hostname，过程与 DNS 类似。
+rDNS 反向查询常用在 traceroute 以及反垃圾邮件技术中，terminal 显示查询到的 hostname，如果没有查询到，那么使用本机设置的 hostname。
+本机 IP 通常是局域网 IP 地址（保留IP地址），一般是查不到的，所以 terminal 一般显示的本机设置的 hostname，比如dangchujiubugaixiafan&rsquo;s-macbook。
+上面提到，局域网 IP 地址一般是查不到 hostname，是因为 ISP 提供商或者用户防火窗的屏蔽保留 IP 地址，因为保留 IP 地址在公网中没啥用，即便是没有被屏蔽掉，rDNS 服务器一般也会关闭响应保留IP地址的查询请求。凡事都有例外，rDNS 服务器对这种保留 IP 地址对查询一律返回 bogon。在 ipv4 对地址划分中，除了公网分配在用对 IP 地址外，其余保留 IP 地址统一叫做bogon space。</p>
+</blockquote>
+<h4 id=参考>参考</h4>
+<ol>
+<li><a href=https://zhuanlan.zhihu.com/p/55827741>Mac修复hostname被篡改为bogon</a></li>
+<li><a href="https://discussionschinese.apple.com/thread/76800?answerId=140246186322#140246186322">问：mac终端用户名不知何故变成了192</a></li>
+<li><a href=https://zhuanlan.zhihu.com/p/105942315>DNS 与路由器设置马克</a></li>
+</ol>
+<h3 id=oh-my-zshhttpsgithubcomohmyzshohmyzsh><a href=https://github.com/ohmyzsh/ohmyzsh>oh my zsh</a></h3>
+<p>注意先让终端启用代理</p>
+<p>安装本体</p>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>sh -c <span style=color:#ba2121>&#34;</span><span style=color:green;font-weight:700>$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style=color:green;font-weight:700>)</span><span style=color:#ba2121>&#34;</span>
+</code></pre></div><p>安装插件</p>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:green>cd</span> ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+</code></pre></div><p>配置 zshrc</p>
+<div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#408080;font-style:italic># fix pip command in zsh</span>
+<span style=color:green>alias</span> <span style=color:#19177c>pip</span><span style=color:#666>=</span><span style=color:#ba2121>&#39;noglob pip&#39;</span>
+
+<span style=color:#408080;font-style:italic># set proxy</span>
+<span style=color:green>export</span> <span style=color:#19177c>https_proxy</span><span style=color:#666>=</span>http://127.0.0.1:7890 <span style=color:#19177c>http_proxy</span><span style=color:#666>=</span>http://127.0.0.1:7890 <span style=color:#19177c>all_proxy</span><span style=color:#666>=</span>socks5://127.0.0.1:7890
+
+<span style=color:#408080;font-style:italic># nvm</span>
+<span style=color:green>export</span> <span style=color:#19177c>NVM_DIR</span><span style=color:#666>=</span><span style=color:#ba2121>&#34;</span><span style=color:#19177c>$HOME</span><span style=color:#ba2121>/.nvm&#34;</span>
+  <span style=color:#666>[</span> -s <span style=color:#ba2121>&#34;/usr/local/opt/nvm/nvm.sh&#34;</span> <span style=color:#666>]</span> <span style=color:#666>&amp;&amp;</span> . <span style=color:#ba2121>&#34;/usr/local/opt/nvm/nvm.sh&#34;</span>  <span style=color:#408080;font-style:italic># This loads nvm</span>
+  <span style=color:#666>[</span> -s <span style=color:#ba2121>&#34;/usr/local/opt/nvm/etc/bash_completion.d/nvm&#34;</span> <span style=color:#666>]</span> <span style=color:#666>&amp;&amp;</span> . <span style=color:#ba2121>&#34;/usr/local/opt/nvm/etc/bash_completion.d/nvm&#34;</span>  <span style=color:#408080;font-style:italic># This loads nvm bash_completion</span>
+
+<span style=color:#408080;font-style:italic># set plugins</span>
+<span style=color:#19177c>plugins</span><span style=color:#666>=(</span>git zsh-autosuggestions zsh-syntax-highlighting sublime<span style=color:#666>)</span>
+
+<span style=color:#408080;font-style:italic># set adb</span>
+<span style=color:green>export</span> <span style=color:#19177c>ANDROID_SDK_ROOT</span><span style=color:#666>=</span><span style=color:#ba2121>&#34;/Users/hyoban/Library/Android/sdk&#34;</span>
+<span style=color:green>export</span> <span style=color:#19177c>PATH</span><span style=color:#666>=</span><span style=color:#ba2121>&#34;</span><span style=color:#19177c>$ANDROID_SDK_ROOT</span><span style=color:#ba2121>/platform-tools:</span><span style=color:#19177c>$PATH</span><span style=color:#ba2121>&#34;</span>
+</code></pre></div><h4 id=主题>主题</h4>
+<ol>
+<li><a href=https://draculatheme.com/terminal>Dracula</a> <a href=https://github.com/dracula/terminal-app/archive/master.zip>直接下载</a></li>
+<li>设置字体为 Monaco，字号为16</li>
+</ol>
+<h3 id=git-配置>git 配置</h3>
+<h4 id=安装-github-desktop>安装 github desktop</h4>
+<p>设置默认分支为 master</p>
+<h4 id=设置全局的-git-ignore>设置全局的 git ignore</h4>
+<p><a href=https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files#configuring-ignored-files-for-all-repositories-on-your-computer>添加设置</a></p>
+<pre><code>git config --global core.excludesfile ~/.gitignore_global
+</code></pre>
+<p>完成后的 .gitconfig 有如下内容</p>
+<pre><code>[core]
+	excludesfile = /Users/&lt;username&gt;/.gitignore_global
+</code></pre>
+<p>添加需要排除的文件</p>
+<p>这里有一份 <a href=https://github.com/github/gitignore/blob/master/Global/macOS.gitignore>mac 的示例</a></p>
+<p><a href=https://twitter.com/github/status/1423663917881077760>参考</a></p>
+<h2 id=brew-list>brew list</h2>
+<h3 id=neofetchhttpsgithubcomdylanarapsneofetch><a href=https://github.com/dylanaraps/neofetch>neofetch</a></h3>
+<p>显示系统信息，不推荐 screenfetch，目前 macOS 11 识别有问题，参考 KittyKatt/screenFetch/issues/716</p>
+<pre><code>brew install neofetch
+</code></pre>
+<h3 id=github-clihttpscligithubcom><del><a href=https://cli.github.com>github cli</a></del></h3>
+<p>便于终端环境配置 github，mac 无需使用，Github desktop 即可</p>
+<pre><code>brew install gh
+</code></pre>
+<h3 id=gohttpsgithubcomgolanggo><a href=https://github.com/golang/go>go</a></h3>
+<pre><code>brew install go
+</code></pre>
+<h3 id=ktlinthttpsgithubcompinterestktlint><a href=https://github.com/pinterest/ktlint>ktlint</a></h3>
+<p>配置 kotlin 代码格式，此外这会依赖于 openjdk 11，可以顺手配置 java 环境。</p>
+<pre><code>brew install ktlint
+sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+</code></pre>
+<h3 id=gpg><del>gpg</del></h3>
+<p>目前主要用于 github commit 认证</p>
+<pre><code>brew install gnupg
+</code></pre>
+<h2>评论</h2>
+<div id=cusdis_thread data-host=https://cusdis.com data-app-id=4eab0f57-ebdc-4f97-9701-66535c7742fc data-page-id=7be74c584635419861677fc2502187c9 data-page-url=https://hyoban.github.io/mac/ data-page-title="mac 补全计划"></div>
+<script async defer src=https://cusdis.com/js/cusdis.es.js></script>
+</article>
+</main>
+<footer class=site-footer>
+<span class=site-footer-credits>
+Made with <a href=https://gohugo.io/>Hugo</a>. Themed by <a href=https://github.com/zwbetz-gh/cayman-hugo-theme>Cayman</a>. Deployed to <a href=https://pages.github.com/>Github Pages</a>.
+</span>
+</footer>
+</section>
+</body>
+</html>
