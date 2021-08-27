@@ -25,7 +25,7 @@
     {{- with .OutputFormats.Get "RSS" -}}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
-    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }} 
+    {{ $pages := .Site.RegularPages }} 
     {{ range $pages }}
     <item>
       <title>{{ .Title }}</title>
