@@ -37,7 +37,7 @@ ktlint --android applyToIDEAProject
 
 请手动查询当前的 spotless 和 ktlint 的最新版本，链接已放在后面
 
-<script src="https://gist.github.com/hyoban/e18fc910f045e50e0fb7a37c39030f25.js"></script>
+{{< gist hyoban e18fc910f045e50e0fb7a37c39030f25 >}}
 
 不要忘记移除 as 默认生成的 task
 
