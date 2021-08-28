@@ -34,53 +34,11 @@ ktlint --android applyToIDEAProject
 
 ### 设置 spotless
 
-请手动查询当前最新版本，链接已放在后面
+请手动查询当前的 spotless 和 ktlint 的最新版本，链接已放在后面
 
-gradle 
+<script src="https://gist.github.com/hyoban/e18fc910f045e50e0fb7a37c39030f25.js"></script>
 
-```gradle
-plugins {
-    id 'com.diffplug.spotless' version '5.14.2'
-}
-
-subprojects {
-    apply plugin: 'com.diffplug.spotless'
-    spotless {
-        kotlin {
-            target '**/*.kt'
-            targetExclude("$buildDir/**/*.kt")
-            targetExclude('bin/**/*.kt')
-
-            ktlint("0.42.1")
-//            licenseHeaderFile rootProject.file("spotless/copyright.kt")
-        }
-    }
-}
-```
-
-kts
-
-```kt
-plugins {
-    id("com.diffplug.spotless") version "5.14.2"
-}
-
-subprojects {
-    apply(plugin = "com.diffplug.spotless")
-    spotless {
-        kotlin {
-            target("**/*.kt")
-            targetExclude("$buildDir/**/*.kt")
-            targetExclude("bin/**/*.kt")
-
-            ktlint("0.42.1")
-//            licenseHeaderFile rootProject.file("spotless/copyright.kt")
-        }
-    }
-}
-```
-
-移除 as 默认生成的 task
+不要忘记移除 as 默认生成的 task
 
 ```gradle
 task clean(type: Delete) {
@@ -97,3 +55,8 @@ task clean(type: Delete) {
 - [谷歌项目示例](https://github.com/android/android-dev-challenge-compose)
 - [spotless](https://github.com/diffplug/spotless)
 - [ktlint](https://github.com/pinterest/ktlint)
+
+## 启用版本控制
+
+我们需要配置好 git ignore 文件，可以参考前面的谷歌项目示例，也可以参考 github 维护的 [示例](https://github.com/github/gitignore/blob/master/Android.gitignore)。
+当然你可以排除你想要排除的，但是请确保别人 clone 下你的项目，可以马上跑起来。
