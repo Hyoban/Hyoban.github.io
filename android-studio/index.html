@@ -43,16 +43,28 @@
 <li>代理配置</li>
 </ol>
 <h2 id=idea-系快捷键>idea 系快捷键</h2>
-<p>cmd + shift + u 转换大小写
-option + shift + click 多光标</p>
-<p>cmd + option + t 创建代码块供折叠
-cmd + . 折叠
-cmd + shift + + or - 快速折叠和展开全部代码块</p>
+<ul>
+<li>
+<p>cmd + shift + u 转换大小写</p>
+</li>
+<li>
+<p>option + shift + click 多光标</p>
+</li>
+<li>
+<p>cmd + option + t 创建代码块供折叠</p>
+</li>
+<li>
+<p>cmd + . 折叠</p>
+</li>
+<li>
+<p>cmd + shift + + or - 快速折叠和展开全部代码块</p>
+</li>
+</ul>
 <h2 id=spotless-和-ktlint>spotless 和 ktlint</h2>
 <h3 id=通过-ktlint-来设置-kotlin-代码风格>通过 ktlint 来设置 kotlin 代码风格</h3>
 <p>需要提前安装好 ktlint，在项目文件夹下运行</p>
 <div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>ktlint --android applyToIDEAProject
-</code></pre></div><p>这只会影响当前 idea 项目，也是官方推荐的方法，你可以点击 <a href=https://github.com/pinterest/ktlint#-with-intellij-idea>链接</a> 查看更多。</p>
+</code></pre></div><p>这只会影响当前 idea 项目，也是官方推荐的方法，你可以点击 <a href=https://github.com/pinterest/ktlint#-with-intellij-idea>链接</a> 查看更多</p>
 <h3 id=设置-spotless>设置 spotless</h3>
 <p>请手动查询当前的 spotless 和 ktlint 的最新版本，链接已放在后面</p>
 <script src=https://gist.github.com/hyoban/e18fc910f045e50e0fb7a37c39030f25.js></script>
@@ -69,8 +81,8 @@ cmd + shift + + or - 快速折叠和展开全部代码块</p>
 <li><a href=https://github.com/pinterest/ktlint>ktlint</a></li>
 </ul>
 <h2 id=启用版本控制>启用版本控制</h2>
-<p>我们需要配置好 git ignore 文件，可以参考前面的谷歌项目示例，也可以参考 github 维护的 <a href=https://github.com/github/gitignore/blob/master/Android.gitignore>示例</a>。
-当然你可以排除你想要排除的，但是请确保别人 clone 下你的项目，可以马上跑起来。</p>
+<p>我们需要配置好 git ignore 文件，可以参考前面的谷歌项目示例，也可以参考 github 维护的 <a href=https://github.com/github/gitignore/blob/master/Android.gitignore>示例</a></p>
+<p>当然你可以排除你想要排除的，但是请确保别人 clone 下你的项目，可以马上跑起来</p>
 <h2>评论</h2>
 <div id=cusdis_thread data-host=https://cusdis.com data-app-id=4eab0f57-ebdc-4f97-9701-66535c7742fc data-page-id=ca04b6de5ac1d2e3f1fdf2ed621742a7 data-page-url=https://hyoban.github.io/android-studio/ data-page-title="如何开始写一个 android 项目"></div>
 <script async defer src=https://cusdis.com/js/cusdis.es.js></script>
