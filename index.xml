@@ -233,7 +233,17 @@ delete rootProject&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#
 &lt;/ul>
 &lt;h2 id="启用版本控制">启用版本控制&lt;/h2>
 &lt;p>我们需要配置好 git ignore 文件，可以参考前面的谷歌项目示例，也可以参考 github 维护的 &lt;a href="https://github.com/github/gitignore/blob/master/Android.gitignore">示例&lt;/a>&lt;/p>
-&lt;p>当然你可以排除你想要排除的，但是请确保别人 clone 下你的项目，可以马上跑起来&lt;/p></description></item><item><title>关于我</title><link>https://hyoban.github.io/about/</link><pubDate>Sat, 25 Sep 1999 22:34:20 +0800</pubDate><guid>https://hyoban.github.io/about/</guid><description>&lt;h2 id="我是谁">我是谁？&lt;/h2>
+&lt;p>当然你可以排除你想要排除的，但是请确保别人 clone 下你的项目，可以马上跑起来&lt;/p>
+&lt;h2 id="使用-r8-来压缩应用体积">使用 r8 来压缩应用体积&lt;/h2>
+&lt;p>我们只需要设置 minifyEnabled true 即可&lt;/p>
+&lt;p>不过需要注意的是，一些第三方库使用到了反射，我们需要保留这些代码不被优化掉。要保留名称字段，在 proguard-rules.pro 文件中添加一个保留规则 -keep:&lt;/p>
+&lt;ol>
+&lt;li>litepal &lt;a href="https://github.com/guolindev/LitePal#proguard">ProGuard&lt;/a>&lt;/li>
+&lt;li>serialization &lt;a href="https://github.com/Kotlin/kotlinx.serialization#android">ProGuard&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h3 id="参考-1">参考&lt;/h3>
+&lt;p>&lt;a href="https://developer.android.google.cn/studio/build/shrink-code">Shrink, obfuscate, and optimize your app&lt;/a>
+&lt;a href="https://mp.weixin.qq.com/s/zDx-SdsqargT4JB6oMIrTw">使用 R8 压缩您的应用&lt;/a>&lt;/p></description></item><item><title>关于我</title><link>https://hyoban.github.io/about/</link><pubDate>Sat, 25 Sep 1999 22:34:20 +0800</pubDate><guid>https://hyoban.github.io/about/</guid><description>&lt;h2 id="我是谁">我是谁？&lt;/h2>
 &lt;p>目前大学在读，毕业前准备考公，梦想是成为独立开发者。&lt;/p>
 &lt;h2 id="博客会写些什么">博客会写些什么？&lt;/h2>
 &lt;p>主要是对于学习折腾得到的笔记进行整理和输出，内容五花八门。&lt;/p>

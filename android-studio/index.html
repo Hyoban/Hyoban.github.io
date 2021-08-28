@@ -32,6 +32,11 @@
 </ul>
 </li>
 <li><a href=#启用版本控制>启用版本控制</a></li>
+<li><a href=#使用-r8-来压缩应用体积>使用 r8 来压缩应用体积</a>
+<ul>
+<li><a href=#参考-1>参考</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </header>
@@ -83,6 +88,16 @@
 <h2 id=启用版本控制>启用版本控制</h2>
 <p>我们需要配置好 git ignore 文件，可以参考前面的谷歌项目示例，也可以参考 github 维护的 <a href=https://github.com/github/gitignore/blob/master/Android.gitignore>示例</a></p>
 <p>当然你可以排除你想要排除的，但是请确保别人 clone 下你的项目，可以马上跑起来</p>
+<h2 id=使用-r8-来压缩应用体积>使用 r8 来压缩应用体积</h2>
+<p>我们只需要设置 minifyEnabled true 即可</p>
+<p>不过需要注意的是，一些第三方库使用到了反射，我们需要保留这些代码不被优化掉。要保留名称字段，在 proguard-rules.pro 文件中添加一个保留规则 -keep:</p>
+<ol>
+<li>litepal <a href=https://github.com/guolindev/LitePal#proguard>ProGuard</a></li>
+<li>serialization <a href=https://github.com/Kotlin/kotlinx.serialization#android>ProGuard</a></li>
+</ol>
+<h3 id=参考-1>参考</h3>
+<p><a href=https://developer.android.google.cn/studio/build/shrink-code>Shrink, obfuscate, and optimize your app</a>
+<a href=https://mp.weixin.qq.com/s/zDx-SdsqargT4JB6oMIrTw>使用 R8 压缩您的应用</a></p>
 <h2>评论</h2>
 <div id=cusdis_thread data-host=https://cusdis.com data-app-id=4eab0f57-ebdc-4f97-9701-66535c7742fc data-page-id=ca04b6de5ac1d2e3f1fdf2ed621742a7 data-page-url=https://hyoban.github.io/android-studio/ data-page-title="如何开始写一个 android 项目"></div>
 <script async defer src=https://cusdis.com/js/cusdis.es.js></script>
