@@ -218,7 +218,7 @@ sudo ln -sfn $(brew --prefix)/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/J
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>这只会影响当前 idea 项目，也是官方推荐的方法，你可以点击 &lt;a href="https://github.com/pinterest/ktlint#-with-intellij-idea">链接&lt;/a> 查看更多&lt;/p>
 &lt;h3 id="设置-spotless">设置 spotless&lt;/h3>
 &lt;p>请手动查询当前的 spotless 和 ktlint 的最新版本，链接已放在后面&lt;/p>
-&lt;script type="application/javascript" src="https://gist.github.com/hyoban/e18fc910f045e50e0fb7a37c39030f25.js">&lt;/script>
+&lt;script src="https://gist.github.com/hyoban/e18fc910f045e50e0fb7a37c39030f25.js">&lt;/script>
 &lt;p>不要忘记移除 as 默认生成的 task&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-gradle" data-lang="gradle">task &lt;span style="color:#00f">clean&lt;/span>&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#a0a000">type:&lt;/span> Delete&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">{&lt;/span>
 delete rootProject&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#7d9029">buildDir&lt;/span>

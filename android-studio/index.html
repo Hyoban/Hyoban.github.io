@@ -67,7 +67,7 @@
 </code></pre></div><p>这只会影响当前 idea 项目，也是官方推荐的方法，你可以点击 <a href=https://github.com/pinterest/ktlint#-with-intellij-idea>链接</a> 查看更多</p>
 <h3 id=设置-spotless>设置 spotless</h3>
 <p>请手动查询当前的 spotless 和 ktlint 的最新版本，链接已放在后面</p>
-<script type=application/javascript src=https://gist.github.com/hyoban/e18fc910f045e50e0fb7a37c39030f25.js></script>
+<script src=https://gist.github.com/hyoban/e18fc910f045e50e0fb7a37c39030f25.js></script>
 <p>不要忘记移除 as 默认生成的 task</p>
 <div class=highlight><pre tabindex=0 style=-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gradle data-lang=gradle>task <span style=color:#00f>clean</span><span style=color:#666>(</span><span style=color:#a0a000>type:</span> Delete<span style=color:#666>)</span> <span style=color:#666>{</span>
     delete rootProject<span style=color:#666>.</span><span style=color:#7d9029>buildDir</span>
