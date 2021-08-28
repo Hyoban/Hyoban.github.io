@@ -205,40 +205,9 @@ cmd + shift + + or - 快速折叠和展开全部代码块&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sh" data-lang="sh">ktlint --android applyToIDEAProject
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>这只会影响当前 idea 项目，也是官方推荐的方法，你可以点击 &lt;a href="https://github.com/pinterest/ktlint#-with-intellij-idea">链接&lt;/a> 查看更多。&lt;/p>
 &lt;h3 id="设置-spotless">设置 spotless&lt;/h3>
-&lt;p>请手动查询当前最新版本，链接已放在后面&lt;/p>
-&lt;p>gradle&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-gradle" data-lang="gradle">plugins &lt;span style="color:#666">{&lt;/span>
-id &lt;span style="color:#ba2121">&amp;#39;com.diffplug.spotless&amp;#39;&lt;/span> version &lt;span style="color:#ba2121">&amp;#39;5.14.2&amp;#39;&lt;/span>
-&lt;span style="color:#666">}&lt;/span>
-subprojects &lt;span style="color:#666">{&lt;/span>
-apply &lt;span style="color:#a0a000">plugin:&lt;/span> &lt;span style="color:#ba2121">&amp;#39;com.diffplug.spotless&amp;#39;&lt;/span>
-spotless &lt;span style="color:#666">{&lt;/span>
-kotlin &lt;span style="color:#666">{&lt;/span>
-target &lt;span style="color:#ba2121">&amp;#39;**/*.kt&amp;#39;&lt;/span>
-targetExclude&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#34;$buildDir/**/*.kt&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
-targetExclude&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#39;bin/**/*.kt&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span>
-ktlint&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#ba2121">&amp;#34;0.42.1&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
-&lt;span style="color:#408080;font-style:italic">// licenseHeaderFile rootProject.file(&amp;#34;spotless/copyright.kt&amp;#34;)
-&lt;/span>&lt;span style="color:#408080;font-style:italic">&lt;/span> &lt;span style="color:#666">}&lt;/span>
-&lt;span style="color:#666">}&lt;/span>
-&lt;span style="color:#666">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>kts&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-kt" data-lang="kt">plugins {
-id(&lt;span style="color:#ba2121">&amp;#34;com.diffplug.spotless&amp;#34;&lt;/span>) version &lt;span style="color:#ba2121">&amp;#34;5.14.2&amp;#34;&lt;/span>
-}
-subprojects {
-apply(plugin = &lt;span style="color:#ba2121">&amp;#34;com.diffplug.spotless&amp;#34;&lt;/span>)
-spotless {
-kotlin {
-target(&lt;span style="color:#ba2121">&amp;#34;**/*.kt&amp;#34;&lt;/span>)
-targetExclude(&lt;span style="color:#ba2121">&amp;#34;&lt;/span>&lt;span style="color:#b68;font-weight:bold">$buildDir&lt;/span>&lt;span style="color:#ba2121">/**/*.kt&amp;#34;&lt;/span>)
-targetExclude(&lt;span style="color:#ba2121">&amp;#34;bin/**/*.kt&amp;#34;&lt;/span>)
-ktlint(&lt;span style="color:#ba2121">&amp;#34;0.42.1&amp;#34;&lt;/span>)
-&lt;span style="color:#408080;font-style:italic">// licenseHeaderFile rootProject.file(&amp;#34;spotless/copyright.kt&amp;#34;)
-&lt;/span>&lt;span style="color:#408080;font-style:italic">&lt;/span> }
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>移除 as 默认生成的 task&lt;/p>
+&lt;p>请手动查询当前的 spotless 和 ktlint 的最新版本，链接已放在后面&lt;/p>
+&lt;script src="https://gist.github.com/hyoban/e18fc910f045e50e0fb7a37c39030f25.js">&lt;/script>
+&lt;p>不要忘记移除 as 默认生成的 task&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-gradle" data-lang="gradle">task &lt;span style="color:#00f">clean&lt;/span>&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#a0a000">type:&lt;/span> Delete&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">{&lt;/span>
 delete rootProject&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#7d9029">buildDir&lt;/span>
 &lt;span style="color:#666">}&lt;/span>
@@ -249,7 +218,10 @@ delete rootProject&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#
 &lt;li>&lt;a href="https://github.com/android/android-dev-challenge-compose">谷歌项目示例&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/diffplug/spotless">spotless&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/pinterest/ktlint">ktlint&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>关于我</title><link>https://hyoban.github.io/about/</link><pubDate>Sat, 25 Sep 1999 22:34:20 +0800</pubDate><guid>https://hyoban.github.io/about/</guid><description>&lt;h2 id="我是谁">我是谁？&lt;/h2>
+&lt;/ul>
+&lt;h2 id="启用版本控制">启用版本控制&lt;/h2>
+&lt;p>我们需要配置好 git ignore 文件，可以参考前面的谷歌项目示例，也可以参考 github 维护的 &lt;a href="https://github.com/github/gitignore/blob/master/Android.gitignore">示例&lt;/a>。
+当然你可以排除你想要排除的，但是请确保别人 clone 下你的项目，可以马上跑起来。&lt;/p></description></item><item><title>关于我</title><link>https://hyoban.github.io/about/</link><pubDate>Sat, 25 Sep 1999 22:34:20 +0800</pubDate><guid>https://hyoban.github.io/about/</guid><description>&lt;h2 id="我是谁">我是谁？&lt;/h2>
 &lt;p>目前大学在读，毕业前准备考公，梦想是成为独立开发者。&lt;/p>
 &lt;h2 id="博客会写些什么">博客会写些什么？&lt;/h2>
 &lt;p>主要是对于学习折腾得到的笔记进行整理和输出，内容五花八门。&lt;/p>
