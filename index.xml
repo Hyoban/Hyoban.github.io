@@ -14,13 +14,41 @@
 &lt;pre>&lt;code>brew rm -f --zap --cask &amp;lt;app name&amp;gt;
 &lt;/code>&lt;/pre>
 &lt;p>-f 表示强制执行，不管是否安装（我们只是想要使用它提供的脚本），zap 可以理解为强力清理。&lt;/p>
-&lt;img width="600" alt="在终端使用 brew 执行卸载脚本" src="https://user-images.githubusercontent.com/38493346/130985443-5a2e834f-bac4-43d8-bc56-233ed05b32b9.png"></description></item><item><title>mac 补全计划</title><link>https://hyoban.github.io/mac/</link><pubDate>Tue, 10 Aug 2021 17:31:20 +0800</pubDate><guid>https://hyoban.github.io/mac/</guid><description>&lt;h2 id="重置指南nuc-8i5beh-限定">重置指南（nuc 8i5beh 限定）&lt;/h2>
+&lt;img width="600" alt="在终端使用 brew 执行卸载脚本" src="https://user-images.githubusercontent.com/38493346/130985443-5a2e834f-bac4-43d8-bc56-233ed05b32b9.png"></description></item><item><title>mac 补全计划</title><link>https://hyoban.github.io/mac/</link><pubDate>Tue, 10 Aug 2021 17:31:20 +0800</pubDate><guid>https://hyoban.github.io/mac/</guid><description>&lt;h2 id="软件列表">软件列表&lt;/h2>
+&lt;h3 id="系统补全">系统补全&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/headkaze/Hackintool">hackintool&lt;/a> 便于替换 efi，修复睡眠&lt;/li>
+&lt;li>&lt;a href="https://github.com/lwouis/alt-tab-macos">alt tab&lt;/a> 提高切换软件体验&lt;/li>
+&lt;li>&lt;a href="https://github.com/Caldis/Mos">mos&lt;/a> 鼠标平滑&lt;/li>
+&lt;li>&lt;a href="https://freemacsoft.net/appcleaner/">appcleaner&lt;/a> 卸载软件残留&lt;/li>
+&lt;/ul>
+&lt;h3 id="必备工具">必备工具&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/yichengchen/clashX">clashx&lt;/a> or &lt;a href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public">clashx pro&lt;/a> 代理软件，pro可以作为旁路由&lt;/li>
+&lt;li>&lt;a href="https://www.sublimetext.com/">sublime text&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.google.com/chrome/">chrome&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="开发工具">开发工具&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://developer.android.com/studio/archive">android studio&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.jetbrains.com/idea/download">idea&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/microsoft/vscode">vscode&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://desktop.github.com/">github desktop&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="其他">其他&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/Ranchero-Software/NetNewsWire">netnewswire&lt;/a> rss 订阅器，支持 iCloud 同步，订阅 twitter&lt;/li>
+&lt;li>&lt;a href="https://github.com/telegramdesktop/tdesktop">telegram&lt;/a> app store 的版本更加流畅。&lt;/li>
+&lt;li>&lt;a href="https://support.logi.com/hc/zh-cn/articles/360025297893">logitech options&lt;/a> 或者 &lt;a href="https://download01.logi.com/web/ftp/pub/techsupport/options/Options_8.54.147.zip">直接下载 zip&lt;/a> （新版本会多安装一个 pop，注意安装老版本）&lt;/li>
+&lt;/ul>
+&lt;h2 id="重置指南nuc-8i5beh-限定">重置指南（nuc 8i5beh 限定）&lt;/h2>
+&lt;p>我有比较严重的强迫症，时常会想要去重装系统，所以就有了下面设置系统的流程。&lt;/p>
 &lt;h3 id="注意事项">注意事项&lt;/h3>
 &lt;p>&lt;strong>重装系统前需要退出设备和网页上的 apple 设备，否则会导致设备无法收到更新。&lt;/strong>（原因是没有手动替换三码）&lt;/p>
 &lt;p>开启 hidpi时，第一项选择 &lt;code>(2) Enable HIDPI (with EDID)&lt;/code>&lt;/p>
 &lt;h3 id="显示器">显示器&lt;/h3>
 &lt;p>切换缩放，设置完成 hidpi 重启后再调整回来。（可选，如果你的显示器默认可以开启 hidpi 的话）&lt;/p>
-&lt;h3 id="mos第三方软件">mos（第三方软件）&lt;/h3>
+&lt;h3 id="mos">mos&lt;/h3>
 &lt;ol>
 &lt;li>设置鼠标平滑&lt;/li>
 &lt;li>开机自启和隐藏图标&lt;/li>
